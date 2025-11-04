@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+
+    <script>
+
+        function print(){
+            document.write("Welcome to my website" + "<br>");
+        }
+
+        print();
+        // without parameter
+        let sum = function(){
+            return 2 + 2 + "<br>";
+        }
+        document.write(sum());
+
+        // with parameter
+        let add = function(a , b){
+            return a + b;
+        }
+        document.write(add(3 , 3) + "<br>");
+
+
+        // arrow Function
+
+        const welcome = () => {
+            document.write("Welcome to arrow function.");
+        }
+
+        let welcome1 = name => {
+            return `My name is ${name}`;
+        }
+        document.write(welcome1("Nikita" + "<br>"));
+
+        let welcome3 = (name, age) => `My name is ${name}, age is ${age}`;
+        document.write(welcome3("Ram" , 34 + "<br>"));
+
+    </script>
+    
+</body>
+</html>

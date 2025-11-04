@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest operator</title>
+</head>
+<body>
+    <h2>Rest operator</h2>
+    <script>
+
+        function sum(num1, num2){
+            document.write(num1+num2 + "<br>");
+        }
+        sum(10,45);
+
+        function add(){
+            let sum = 0;
+            for( let i in arguments){  // argument hold all passed values 
+                sum += arguments[i];
+            }
+            document.write(sum + "<br>");
+        }
+        add(1,2,3,4);
+
+        // rest operator
+        // rest operator always start with ... and add in last as a argument
+
+        function add2(name , ...args){
+            document.write(`My name is ${name} and total marks `);
+            let sum = 0;
+            for(let i in args){
+                sum += args[i];
+            }
+            document.write(sum + "<br>");
+        }
+
+        add2("Nikita", 40,20,30,30);
+
+        function add3(name, course, ...marks){
+            document.write(`My name is ${name} and My course is "${course}" and total marks `);
+            let sum = 0;
+            for (let i in marks){
+                sum +=marks[i];
+            }
+            document.write(sum + "<br>");
+        }
+
+        add3("Pratham", "IT", 30, 40,30);
+
+    </script>
+    
+</body>
+</html>

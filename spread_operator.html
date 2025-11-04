@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Opeartor</title>
+</head>
+<body>
+
+    <h2>Spread Operator</h2>
+
+    <script>
+        function add(name, ...marks){
+            document.write(`My name is ${name} and my marks is  `)
+            let sum = 0;
+            for  ( let i in marks){
+                sum += marks[i];
+            }
+            document.write(sum + "<br>");
+        }
+
+        let arr = [10,20,30,40];
+        add("Nikita", ...arr); // sprad operator
+    </script>
+
+    <script>
+        var arr1 = [10,20,30];
+        console.log(arr1);
+        console.log(...arr1);
+        console.log([...arr1]);
+
+    </script>
+
+    <script>
+        var arr1 = [1,2,3,4];
+        var arr2 = [4,5,6,7];
+        
+        var arr3 = [...arr1, ...arr2]; // concat both array
+        document.write(arr3);
+        document.write("<br>");
+
+        var arr3 = [0,...arr1, ...arr2,8];
+        document.write(arr3);
+    </script>
+
+    <script>
+        var obj1 = {
+            name : "Nikita",
+            education : "ENTC"
+        }
+        var obj2 = {
+            age : 22,
+            phone : 9022298742
+        }
+
+        var obj3 = {...obj1, ...obj2};
+        console.log(obj3);
+        document.write(obj3);  // in these it print o/p [object , object]
+        document.write(JSON.stringify(obj3));
+        document.write(`<pre>${JSON.stringify(obj3,null,6)}<pre>`); // value, replacer, spaces
+        document.write(`<pre>${JSON.stringify(obj3,["name", "age"],6)}</pre>`);
+        
+    </script>
+    
+</body>
+</html>
