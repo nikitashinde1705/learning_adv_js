@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Array Object</title>
+</head>
+<body>
+    
+    <script>
+        //Before ES6
+        const person = {
+            name : "Nikita",
+            age : 22,
+            gender : "Female",
+            salary : 35000
+        }
+
+        let name = person.name;
+        let age = person.age;
+        let gender = person.gender;
+        let salary = person.salary;
+
+        console.log(name);
+
+    </script>
+
+    <script>
+        //after ES6
+        const college = {
+            name1 : "D.Y. Patil",
+            department : "Entc",
+            year : 2025
+        }
+
+        let {name1, department, year} = college;
+        console.log(name1);
+        console.log(department);
+        console.log(year);
+
+        document.write(`College name is: ${name1} <br> Department is: ${department} <br> Year is: ${year} <br>`);
+
+    </script>
+
+    <script>
+        // using function
+
+        const person1 = {
+            name1 : "Nikita",
+            age1 : 21,
+            gender1 : "Female",
+            salary1 : 35000
+        }
+
+        function showInfo({name1, age1, gender1, salary1}){
+            document.write(`Name is: ${name} <br> age is: ${age1} <br> Gender is: ${gender1} <br> salary is: ${salary1} <br>`);
+        }
+
+        showInfo(person1);
+
+    </script>
+
+    <script>
+        const student = {
+            uname : "Radha",
+            marks : {maths : 97, science : 86, hindi: 93}
+        }
+
+        const {uname, marks:{maths, science, hindi}} = student;
+        document.write(`Name : ${uname} <br> Maths : ${maths} <br> Science: ${science} <br> Hindi : ${hindi}`);
+    </script>
+
+
+    <script>
+        // array destructuring
+
+        const arrValue = ['One', 'Two','Three'];
+
+        const[a,b,c] = arrValue;
+        console.log(a,b,c);
+
+    </script>
+
+    <script>
+        // swap value of two variables
+        let p = 5, q = 10;
+
+        [p, q] = [q, p];
+        document.write(`p = ${p} and q = ${q} <br>`);
+    </script>
+
+    <script>
+
+        // destructuring using rest operator
+        const array = [10, 20, 30, 40, 50];
+
+        const[x,y, ...args] = array;
+        document.write(`First:${x}, Second: ${y}, Rest:${args} <br>`);
+        
+    </script>
+</body>
+</html>
