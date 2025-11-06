@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+
+    <h2>OOP</h2>
+
+    <script> 
+
+    // class and object
+        class hello{
+            print(){  // prototype method
+                document.write(`Welcome to Pune <br>`);
+            }
+
+            welcome(){
+                document.write(`I am here`)
+            }
+        }
+
+        let obj1 = new hello();
+        obj1.print();
+
+        let obj2 = new hello();
+        obj2.welcome();
+    </script>
+
+    <script>
+        // constructor
+        class student{
+            constructor(){
+                document.write(`Hello constructor calling here directly <br>`);
+            }
+
+            static staticMethod(){
+                document.write(`Static method <br>`);
+            }
+        }
+
+        let c = new student();
+
+        // static method - static method only calls with class
+        student.staticMethod();
+
+    </script>
+
+    <script>
+        class person{
+            constructor(name, age, salary){
+                this.pname = name;
+                this.page = age;
+                this.psalary = salary;
+                this.display();
+            }
+
+            display(){
+                document.write(`Name: ${this.pname} , Age: ${this.page} , Salary: ${this.psalary}`);
+            }
+        }
+
+        let s1 = new person("Nikita", 22, 670000);
+    </script>
+
+    <script>
+
+        // Parent class
+        class Person{
+            constructor(name, age){
+
+                this.name = name;
+                this.age = age;
+            }
+            showInfo(){
+                document.write(`<h1>Person Information</h1> Name: ${this.name} , Age: ${this.age}<br> `);
+            }
+        }
+
+        // child class
+        class Student extends Person{
+            constructor(name,age,roll_no){
+                super(name, age);
+                this.roll_no = roll_no;
+            }
+
+            showStudents(){
+                document.write(`<h1>Student Information</h1> Name: ${this.name} , Age: ${this.age}, Roll No.: ${this.roll_no} <br>`);
+            }
+        }
+
+        class Employee extends Person{
+            constructor(name, age, emp_id){
+                super(name, age);
+                this.emp_id = emp_id;
+            }
+
+            showEmployee(){
+                document.write(`<h1>Employee Information</h1> Name: ${this.name} , Age: ${this.age}, Emp id.: ${this.emp_id} <br>`);
+            }
+
+        }
+
+        const student1 = new Person("Nikita", 22);
+        student1.showInfo();
+
+        const student2 = new Student("Bharti", 22, 56);
+        student2.showStudents();
+        student2.showInfo();
+
+        const emp = new Employee("Pratiksha" , 23 , 56);
+        emp.showEmployee();
+
+    </script>
+
+    
+</body>
+</html>

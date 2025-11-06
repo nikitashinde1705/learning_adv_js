@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Parent class
+        class Person{
+            constructor(name, age){
+
+                this.name = name;
+                this.age = age;
+            }
+            showInfo(){
+                document.write(`<h1>Person Information</h1> Name: ${this.name} , Age: ${this.age}<br> `);
+            }
+        }
+
+         // child class
+        class Student extends Person{
+            constructor(name,age,roll_no){
+                super(name, age);
+                this.roll_no = roll_no;
+            }
+
+            showStudents(){
+                document.write(`<h1>Student Information</h1> Name: ${this.name} , Age: ${this.age}, Roll No.: ${this.roll_no} <br>`);
+            }
+        }
+
+        class Graduate extends Student{
+            constructor(name,age,roll_no, degree){
+                super(name, age , roll_no);
+                this.degree = degree;
+            }
+
+            showGraduate(){
+                document.write(`<h1>Student Information</h1> Name: ${this.name} , Age: ${this.age}, Roll No.: ${this.roll_no}, Degree: ${this.degree}<br>`);
+            }
+        }
+
+        class Diploma extends Student{
+            constructor(name,age,roll_no, course){
+                super(name, age , roll_no);
+                this.course = course;
+            }
+
+            showGraduate(){
+                document.write(`<h1>Diploma Student Information</h1> Name: ${this.name} , Age: ${this.age}, Roll No.: ${this.roll_no}, Course: ${this.course}<br>`);
+            }
+        }
+
+        const g = new Graduate("Pratiksha" , 23 , 56 , "BE");
+        g.showGraduate();
+
+        const d = new Diploma("Jay" , 23 , 56 , "Diploma");
+        d.showGraduate();
+
+
+
+        
+    </script>
+</body>
+</html>
