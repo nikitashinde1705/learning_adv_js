@@ -39,7 +39,7 @@
             }
 
             showGraduate(){
-                document.write(`<h1>Student Information</h1> Name: ${this.name} , Age: ${this.age}, Roll No.: ${this.roll_no}, Degree: ${this.degree}<br>`);
+                document.write(`<h1>Graduate Information</h1> Name: ${this.name} , Age: ${this.age}, Roll No.: ${this.roll_no}, Degree: ${this.degree}<br>`);
             }
         }
 
@@ -49,7 +49,7 @@
                 this.course = course;
             }
 
-            showGraduate(){
+            showDiploma(){
                 document.write(`<h1>Diploma Student Information</h1> Name: ${this.name} , Age: ${this.age}, Roll No.: ${this.roll_no}, Course: ${this.course}<br>`);
             }
         }
@@ -58,7 +58,7 @@
         g.showGraduate();
 
         const d = new Diploma("Jay" , 23 , 56 , "Diploma");
-        d.showGraduate();
+        d.showDiploma();
 
 
 
