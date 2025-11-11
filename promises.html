@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+
+
+<body>
+    <h2>Promises</h2>
+
+    <!-- <script>
+
+        let prom = new Promise (function(resolve,reject){
+            let condition = true;
+
+            if(condition){
+                resolve("Promise fullfiled successfully");
+            }
+            else{
+                reject("Promise rejected");
+            }
+        });
+
+        let onFulfilled = (result) => {console.log(result)};
+        let onRejection = (error) => {console.log(error)};
+
+        prom.then(onFulfilled)
+            .catch(onRejection)
+            .finally(() => {
+                console.log("Promise operation finished");
+            });
+
+    </script> -->
+
+    <script>
+
+        let promise2 = new Promise ((resolve,reject) => {
+
+            console.log("Fetching data");
+
+            setTimeout(() => {
+                let dataAvailable = true;
+
+                if(dataAvailable) 
+                    resolve("Promise resolve successfully");
+                else
+                    reject("Promise rejected");
+            },5000);
+        });
+
+        promise2
+        .then(result => console.log(result))
+        .catch(error => console.log(error))
+        .finally(() => console.log("Promise operation finished"))
+    </script> 
+
+    <script>
+
+        let Promise3 = new Promise((resolve3, reject3) =>{
+            let userName = prompt("Enter user Name");
+            let password = prompt("Enter Password");
+
+            if (userName === "admin" && password === "nikita"){
+                resolve3("Login successfully");
+            }
+            else {
+                reject3("Invalid credentials");
+            }
+        }
+        );
+
+        Promise3
+        .then(msg =>{
+            document.write("<h2 style='color:green'>" + msg + "</h2> ");
+        })
+        .catch(err => console.log(err))
+        .finally(() => console.log("Login attempted"))
+
+    </script>
+    
+</body>
+</html>
