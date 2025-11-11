@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Fetch</title>
+</head>
+<body>
+
+    <h2>AJAX Fetch - Load Local Data</h2>
+
+    <button onclick="loadText()">Load Text File</button>
+
+    <button onclick="loadJSON()">Load JSON File</button>
+    <p id="output"></p>
+
+    <script>
+        function loadText(){
+            fetch("file.txt")
+                .then(response => {
+                    document.write("Http status code " + response.status + "<br>");
+
+                    if(!response.ok){
+                        throw new Error("File not Found"+ "<br>");
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.write("File Content"+ "<br>");
+                    document.write(data);
+                })
+                .catch(error => {
+                    document.write("Error" + error.message + "<br>");
+                })
+
+                .finally(() => {
+                    document.write("File loading issue"+ "<br>");
+                })
+            }
+        
+    </script>
+
+     <script>
+        function loadJSON(){
+            fetch("data.json")
+                .then(response => {
+                    document.write("Http status code " + response.status + "<br>");
+
+                    if(!response.ok){
+                        throw new Error("File not Found"+ "<br>");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // document.write("File Content"+ "<br>");
+                    // document.write(data);
+                    document.getElementById("output").innerHTML += `<b>File content: </b>Name: ${data.name} <br>
+                        age: ${data.age} <br> city: ${data.city} <br > degree: ${data.degree} <br> `;
+                })
+                //  .catch(error => {
+                //     document.write("Error" + error.message + "<br>");
+                // })
+
+                // .finally(() => {
+                //     document.write("File loading issue"+ "<br>");
+                // })
+            }
+        
+    </script>
+
+   
+
+    
+</body>
+</html>

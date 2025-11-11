@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+
+    <h2>AJAX - Load Local Data</h2>
+
+    <button onclick="loadText()">Load Text File</button>
+
+    <button onclick="loadJSON()">Load JSON File</button>
+
+    <pre id="ajaxdata">Click a Button to laod Data</pre>
+
+    <script>
+        function loadText(){
+            var xhr = new XMLHttpRequest();  //1. create a new AJAX request
+
+            xhr.open("GET", "file.txt", true); //2. configuration
+
+            xhr.onload = function(){
+                if(xhr.status === 200){
+                    document.getElementById("ajaxdata").textContent = xhr.responseText;
+                } else {
+                    document.getElementById("ajaxdata").textContent = "Error loading text file";
+                }
+            }
+            xhr.onerror = function(){
+                document.getElementById("ajaxdata").textContent = "Request failed";
+            }
+            xhr.send();
+        }
+    </script>
+
+    <script>
+        function loadJSON(){
+            var xhr = new XMLHttpRequest();  //1. create a new AJAX request
+
+            xhr.open("GET", "data.json", true); //2. configuration
+
+            xhr.onload = function(){
+                if(xhr.status === 200){
+                    var data = JSON.parse(xhr.responseText);
+                    document.getElementById("ajaxdata").textContent = JSON.stringify(data,null,2);
+                } else {
+                    document.getElementById("ajaxdata").textContent = "Error loading text file";
+                }
+            }
+            xhr.onerror = function(){
+                document.getElementById("ajaxdata").textContent = "Request failed";
+            }
+            xhr.send();
+        }
+    </script>
+    
+</body>
+</html>
