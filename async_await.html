@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async-await</title>
+</head>
+<body>
+
+    <h2>Async-await Example</h2>
+    <pre id="output"></pre>
+    <pre id="output1"></pre>
+
+
+    <!-- <script>
+        const output = document.getElementById("output");
+
+        function log(message){
+            output.textContent += message +"\n";
+        }
+
+        function getUser(){
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve("User Data fetched");
+                },2000);
+            });
+        }
+
+        function getPost(){
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve("User Data fetched");
+                },1500);
+            });
+        }
+
+        function getComment(){
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve("User Data fetched");
+                },1000);
+            });
+        }
+
+        async function loadAllData(){
+            const user = await getUser();
+            log(user);
+            const post = await getPost();
+            log(post);
+            const comment = await getComment();
+            log(comment);
+
+           
+        }
+        log("script started");
+        loadAllData();
+
+
+    </script> -->
+
+    <script>
+        const output1 = document.getElementById("output1");
+
+        function log1(message1){
+            output1.textContent += message1 +"\n";
+        }
+
+        function boilWater(){
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve("Water boiled");
+                },2000);
+            });
+        }
+        function makeTea(){
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve("Make a Tea");
+                },1500);
+            });
+        }
+        function Toast(){
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve("Bread Toasted");
+                },1000);
+            });
+        }
+
+
+            async function Breakfast(){
+
+                try{
+                    const water = await boilWater();
+                log1(water);
+                const tea = await makeTea();
+                log1(tea);
+                const toast = await Toast();
+                log1(toast);
+                }
+                catch {
+                    log1("Error happen")
+                }
+            
+
+           
+        }
+        log1("Breakfast started");
+        Breakfast();
+    </script>
+
+
+    
+</body>
+</html>

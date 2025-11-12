@@ -44,7 +44,8 @@
         function loadJSON(){
             fetch("data.json")
                 .then(response => {
-                    document.write("Http status code " + response.status + "<br>");
+                    // document.write("Http status code " + response.status + "<br>");
+                    document.getElementById("output").innerHTML = "HTTP Status Code: " + response.status + "<br>";
 
                     if(!response.ok){
                         throw new Error("File not Found"+ "<br>");
@@ -55,15 +56,15 @@
                     // document.write("File Content"+ "<br>");
                     // document.write(data);
                     document.getElementById("output").innerHTML += `<b>File content: </b>Name: ${data.name} <br>
-                        age: ${data.age} <br> city: ${data.city} <br > degree: ${data.degree} <br> `;
+                        age: ${data.age} <br> city: ${data.city} <br> degree: ${data.degree} <br> `;
                 })
-                //  .catch(error => {
-                //     document.write("Error" + error.message + "<br>");
-                // })
+                 .catch(error => {
+                    document.getElementById("output").innerHTML += `<p>${error.message}</p>`;
+                })
 
-                // .finally(() => {
-                //     document.write("File loading issue"+ "<br>");
-                // })
+                .finally(() => {
+                    document.getElementById("output").innerHTML += "File loading issue<br>";
+                })
             }
         
     </script>
