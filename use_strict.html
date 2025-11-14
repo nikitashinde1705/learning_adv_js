@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Strict</title>
+</head>
+<body>
+    <h2>Use Strict</h2>
+    <script>
+        "use strict"  //to avoid a error, if we not declare variable in that case it give error
+        // some error are not display in editor this are display using these keyword 
+        a = 5;
+        console.log(a);
+    </script>
+
+    <script>
+        "use strict"   // now it give the error same parameter name are not alowed
+        function test(a,b,b){
+            console.log(a + b + c);
+        }
+
+        test(10,20,30);
+    </script>
+
+</body>
+</html>

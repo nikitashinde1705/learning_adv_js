@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+
+    <h2>Hoisting</h2>
+
+    <script>
+        //in case of let & const it give reference type error
+        console.log(a);  // output: undefiend
+        var a;
+    </script>
+
+    <script>
+        test();
+        function test(){
+            console.log("Hello");
+        }
+    </script>
+
+    <script>
+        test1();
+        let arr = function(){
+            console.log("hello");  //it gives type error
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clouser</title>
+</head>
+<body>
+    <!-- <script>
+        function outer() {
+        let x = 10; 
+
+        function inner() {
+            document.write(x);  
+        }
+
+        return inner;
+        }
+
+        let f = outer();
+        f(); 
+
+    </script> -->
+
+    <script>
+        function createWallet(){
+            let balance = 1000;
+
+            function addAmount(amount){
+                balance = balance + amount
+                console.log("Added:", amount);
+            }
+
+            function getBalance(){
+                console.log("Balance: ", balance);
+            }
+            return{addAmount, getBalance};
+        }
+        const myWallet = createWallet();
+        myWallet.getBalance();
+        myWallet.addAmount(500);
+        myWallet.getBalance();
+    </script>
+</body>
+</html>
