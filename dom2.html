@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom counter</title>
+    <style>
+        #modal{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box{
+            background-color: blueviolet;
+            padding: 2rem;
+            border-radius: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="count">0</h1>
+    <button onclick="increment()"> + </button>
+    <button onclick="decrement()"> - </button>
+
+    <button onclick="openModal()"></button>
+
+    <div id="modal">
+        <div class="box">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum maiores assumenda, illum adipisci explicabo eius ipsam fuga maxime! Vero error, consequatur praesentium consequuntur vel laboriosam aperiam reiciendis laudantium labore assumenda.</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(){
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        function closeModal(){
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+
+    <script>
+
+        let c = 0;
+
+        function increment(){
+            c++;
+            document.getElementById("count").innerText = c;
+        }
+
+        function decrement(){
+            c--;
+            document.getElementById("count").innerText = c;
+        }
+    </script>
+    
+</body>
+</html>

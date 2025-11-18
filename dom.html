@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+
+    <style>
+        .nav{
+            display: flex;
+            justify-content: center;
+            gap: 7rem;
+            background-color: rgb(214, 166, 235);
+            padding: 1.5rem;
+            margin: 5px;
+            
+
+        }
+        a{
+           text-decoration: none; 
+           font-size: 1.5rem;
+           color: black;
+           font-weight: 600;
+        }
+
+        section{
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#main">Main</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h2>Home section</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ducimus sapiente tempore sequi praesentium, soluta quam nesciunt assumenda ipsam eum doloremque illum tempora impedit, in nobis, quod consequatur expedita. Enim.lorem30 orem ipsum, dolor sit amet consectetur adipisicing elit. Ex ducimus sapiente tempore sequi praesentium, soluta quam nesciunt assumenda ipsam eum doloremque illum tempora impedit, in nobis, quod consequatur expedita. Enim.lorem30</p>
+    </section>
+
+    
+
+    <section id="about">
+        <h2>About section</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ducimus sapiente tempore sequi praesentium, soluta quam nesciunt assumenda ipsam eum doloremque illum tempora impedit, in nobis, quod consequatur expedita. Enim.lorem30 orem ipsum, dolor sit amet consectetur adipisicing elit. Ex ducimus sapiente tempore sequi praesentium, soluta quam nesciunt assumenda ipsam eum doloremque illum tempora impedit, in nobis, quod consequatur expedita. Enim.lorem30</p>
+    </section>
+
+    <section id="main">
+        <h2>Main section</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ducimus sapiente tempore sequi praesentium, soluta quam nesciunt assumenda ipsam eum doloremque illum tempora impedit, in nobis, quod consequatur expedita. Enim.lorem30 orem ipsum, dolor sit amet consectetur adipisicing elit. Ex ducimus sapiente tempore sequi praesentium, soluta quam nesciunt assumenda ipsam eum doloremque illum tempora impedit, in nobis, quod consequatur expedita. Enim.lorem30</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact section</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ducimus sapiente tempore sequi praesentium, soluta quam nesciunt assumenda ipsam eum doloremque illum tempora impedit, in nobis, quod consequatur expedita. Enim.lorem30 orem ipsum, dolor sit amet consectetur adipisicing elit. Ex ducimus sapiente tempore sequi praesentium, soluta quam nesciunt assumenda ipsam eum doloremque illum tempora impedit, in nobis, quod consequatur expedita. Enim.lorem30</p>
+    </section>
+
+    <script>
+        // var element = document.getElementById("home");
+        // console.log(element);
+
+        document.getElementById("contact").innerText = "Updated contact section";
+        document.getElementById("main").innerHTML = "<h2>This is main section</h2>";
+
+        document.getElementById("about").style.backgroundColor = "pink";
+    </script>
+    
+</body>
+</html>
